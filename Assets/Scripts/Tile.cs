@@ -1,16 +1,27 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TileState state { get; private set; }
+    public char letter { get; private set; }
+
+    [SerializeField] TMP_Text text;
+    [SerializeField] Image fill;
+    [SerializeField] Outline outline;
+
+    public void SetLetter(char letter)
     {
-        
+        this.letter = letter;
+        text.text = letter.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetState(TileState state)
     {
-        
+        this.state = state;
+        fill.color = state.fillColor;
+        outline.effectColor = state.outlineColor;
     }
 }

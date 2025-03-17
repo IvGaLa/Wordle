@@ -241,3 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe35f343752c0c48a7669035c0429d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 6249362667940387146}
+  fill: {fileID: 5858412457857433206}
+  outline: {fileID: 5075383790307694348}

@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Row : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Tile[] tiles { get; private set; }
+
+    public string word
     {
-        
+        get
+        {
+            string word = "";
+            for (int i = 0; i < tiles.Length; i++)
+                word += tiles[i].letter;
+
+            return word;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void Awake()
     {
-        
+        tiles = GetComponentsInChildren<Tile>();
     }
 }
