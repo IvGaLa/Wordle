@@ -6,4 +6,6 @@ public enum ConfigTypes
   LANGUAGE,
   PATH_LANG,
   WORDLE_FILENAME,
+  SPRITES_PATH,
+  FLAG_SPRITES_FILENAME
 }

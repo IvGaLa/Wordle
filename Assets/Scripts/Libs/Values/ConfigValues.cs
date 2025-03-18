@@ -13,6 +13,12 @@ public class ConfigValues
     { ConfigTypes.LANGUAGE, new Config<string>($"{LanguageValues.GetLanguage(LanguageTypes.ENGLISH)}/") }, // Default language
     { ConfigTypes.WORDLE_FILENAME, new Config<string>("wordle") },
 
+    { ConfigTypes.SPRITES_PATH, new Config<string>("Sprites/") },
+    { ConfigTypes.FLAG_SPRITES_FILENAME, new Config<string>("Flags") },
+
+    
+  
+
     // { ConfigTypes.MUSIC_PATH, new Config<string>("Audio/Music/") },
     // { ConfigTypes.SFX_PATH, new Config<string>("Audio/SFX/") },
   };
