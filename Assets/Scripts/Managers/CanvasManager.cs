@@ -18,16 +18,10 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    public void LoadMain()
+    public void LoadMain(bool main) // If main is true "Load main canvas", if false "Load game canvas"
     {
-        mainCanvas.gameObject.SetActive(true);
-        gameCanvas.gameObject.SetActive(false);
-    }
-
-    public void LoadGame()
-    {
-        mainCanvas.gameObject.SetActive(false);
-        gameCanvas.gameObject.SetActive(true);
+        mainCanvas.gameObject.SetActive(main);
+        gameCanvas.gameObject.SetActive(!main);
     }
 
 }

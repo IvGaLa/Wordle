@@ -14,6 +14,7 @@ public class LanguageValues
     {LanguageTypes.RUSSIAN,"RU"},
     {LanguageTypes.BULGARIAN,"BG"},
     {LanguageTypes.HUNGARIAN,"HU"},
+    {LanguageTypes.DUTCH,"NL"},
     {LanguageTypes.POLISH,"PL"},
     {LanguageTypes.UKRAINIAN,"UK"},
     {LanguageTypes.CZECH,"CS"},

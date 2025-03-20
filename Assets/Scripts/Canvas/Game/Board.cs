@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random; // To avoid ambiguity with System.Random
 
@@ -8,23 +7,38 @@ public class Board : MonoBehaviour
 {
     readonly char charA = 'A', charZ = 'Z', charÑ = 'Ñ';
     int rowIndex, columnIndex, rowsLength, tilesLength;
-    [SerializeField] Row[] rows;
+    Row[] rows;
     Row currentRow;
-    string[] solutions, validWords;
+    string[] validWords;
     string word;
+    bool playing = false;
 
     // This is for debugging only
-    [SerializeField] TMP_Text wordToDelete;
+    TMP_Text wordToDelete;
 
     public TileState emptyState, occupiedState, correctState, wrongState, incorrectState;
 
-    void Start()
+    public void StartGame()
     {
-        rowsLength = rows.Length;
-        tilesLength = rows[0].tiles.Length;
+        playing = true;
+        ForDebug();
+        SetLengths();
         LoadWordleList();
         SetRandomWord();
         SetTileSets();
+    }
+
+    void ForDebug()
+    {
+        GameObject deb = GameObject.FindWithTag("debug");
+        wordToDelete = deb.GetComponent<TMP_Text>();
+    }
+
+    void SetLengths()
+    {
+        rows = GetComponentsInChildren<Row>();
+        rowsLength = rows.Length;
+        tilesLength = rows[0].tiles.Length;
     }
 
     void SetTileSets()
@@ -48,6 +62,8 @@ public class Board : MonoBehaviour
 
     void Update()
     {
+        if (!playing) return;
+
         currentRow = rows[rowIndex];
 
         if (Input.GetKeyDown(KeyCode.Backspace))
