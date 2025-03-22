@@ -38,6 +38,7 @@ public class Board : MonoBehaviour
     {
         rows = GetComponentsInChildren<Row>();
         rowsLength = rows.Length;
+        rows[0].SetTiles();
         tilesLength = rows[0].tiles.Length;
     }
 

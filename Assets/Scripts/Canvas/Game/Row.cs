@@ -17,8 +17,5 @@ public class Row : MonoBehaviour
     }
 
 
-    void Awake()
-    {
-        tiles = GetComponentsInChildren<Tile>();
-    }
+    public void SetTiles() => tiles = GetComponentsInChildren<Tile>();
 }
